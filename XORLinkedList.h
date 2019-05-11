@@ -179,21 +179,34 @@ unsigned int XORLinkedList<T>::Remove(const T &data) {}
 
 template <typename T>
 bool XORLinkedList<T>::RemoveAt(unsigned int index) {
-	if (index < count) {
+	if(index < count) {
 		Node *tempNode = first, *nextNode = nullptr, *prevNode = nullptr;
+		// Temporary fix to edge case
+		if(count == 1) {
+			delete tempNode;
+			tempNode = nullptr;
+			count--;
+			return true;
+		}
+
 		if(index < count/2) {
 			for (unsigned int i = 0; i < index; i++)
 				NextNode(tempNode, prevNode);
 			nextNode = XOR(prevNode, tempNode->npx);
-			prevNode->npx = XOR(XOR(prevNode->npx, tempNode), nextNode);
-			nextNode->npx = XOR(XOR(tempNode, nextNode->npx), tempNode);
+			if(prevNode) prevNode->npx = XOR(XOR(prevNode->npx, tempNode), nextNode);
+			if(nextNode) nextNode->npx = XOR(XOR(tempNode, nextNode->npx), prevNode);
 
 		} else {
+			tempNode = last;
 			for (unsigned int i = count - 1; i >= index; i--)
 				NextNode(tempNode, prevNode);
+			nextNode = XOR(prevNode, tempNode->npx);
+			if(prevNode) prevNode->npx = XOR(XOR(prevNode->npx, tempNode), nextNode);
+			if(nextNode) nextNode->npx = XOR(XOR(tempNode, nextNode->npx), prevNode);
 		}
 
 		delete tempNode;
+		tempNode = nullptr;
 		count--;
 		return true;
 	} else return false;

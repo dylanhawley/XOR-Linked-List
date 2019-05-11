@@ -91,6 +91,7 @@ void TestAddTail()
     cout << "Node count: " << data.NodeCount() << endl;
     cout << "Print list forward:" << endl;
     data.PrintForward();
+    //data.RemoveAt(0);
     cout << "Print list in reverse:" << endl;
     data.PrintReverse();
 }
@@ -120,7 +121,7 @@ void TestAddTail()
 //
 //     list.PrintForward();
 // }
-//
+
 // void TestRemove()
 // {
 //     cout << "=====Testing Remove() functionality=====" << endl;
@@ -147,7 +148,7 @@ void TestAddTail()
 //     cout << "Nodes removed: " << count << endl;
 //
 // }
-//
+
 // void TestRemoveHeadTail()
 // {
 //     cout << "=====Testing RemoveHead()/RemoveTail() functionality=====" << endl;

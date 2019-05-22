@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dylan Hawley. All rights reserved.
 //
 
-#include "XORLinkedList.h"
+#include "XORLinkedList.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>

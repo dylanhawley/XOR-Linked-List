@@ -1,5 +1,5 @@
-#ifndef XORLinkedList_h
-#define XORLinkedList_h
+#ifndef XORLinkedList_hpp
+#define XORLinkedList_hpp
 #include <iostream>
 #include <vector>
 

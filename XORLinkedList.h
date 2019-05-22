@@ -242,7 +242,6 @@ bool XORLinkedList<T>::operator==(const XORLinkedList<T> &rhs) const {
   return true;
 }
 
-// TODO: reimplement to not use GetNode()
 template <typename T>
 XORLinkedList<T> &XORLinkedList<T>::operator=(const XORLinkedList<T> &rhs) {
   Node *tempNode = rhs.first, *prevNode = nullptr;
@@ -257,7 +256,6 @@ XORLinkedList<T> &XORLinkedList<T>::operator=(const XORLinkedList<T> &rhs) {
 template <typename T>
 XORLinkedList<T>::XORLinkedList(): count(0), first(nullptr), last(nullptr) {}
 
-// TODO: reimplement to not use GetNode()
 template <typename T>
 XORLinkedList<T>::XORLinkedList(const XORLinkedList<T> &list) {
   Node *tempNode = list.first, *prevNode = nullptr;

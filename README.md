@@ -1,4 +1,4 @@
-# XORLinkedList
+# XOR-Linked-List
 
 This is an experimental data structure that implements a more memory efficient doubly linked list
 

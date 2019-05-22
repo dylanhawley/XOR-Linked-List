@@ -15,6 +15,7 @@ using namespace std;
 void TestAddHead();
 void TestAddTail();
 void TestRemove();
+void TestRemove2();
 void TestRemoveAt(unsigned int index);
 void PrintHeadTail(XORLinkedList<int> &data);
 void TestAssign();
@@ -30,6 +31,8 @@ int main()
     else if (testNum == 3)
         TestRemove();
     else if (testNum == 4)
+        TestRemove2();
+    else if (testNum == 5)
         TestAssign();
     return 0;
 }
@@ -64,6 +67,26 @@ void TestRemove()
 {
     cout << "=====Testing Remove() functionality=====" << endl;
     for(int i = 0; i <= 7; i++) TestRemoveAt(i);
+}
+
+void TestRemove2()
+{
+    cout << "=====Testing Remove2() functionality=====" << endl;
+    for(int i = 1; i <= 3; i++) {
+        XORLinkedList<int> data;
+        for (int j = 0; j < i; j++)
+            data.AddTail(3*j);
+        cout << "Print list of size:" << i << endl;
+        data.PrintForward();
+        while(data.RemoveAt(1));
+        cout << "Print list after delete:" << endl;
+        data.PrintForward();
+        data.PrintReverse();
+        PrintHeadTail(data);
+        cout << "======" << endl;
+    }
+    XORLinkedList<int> data;
+
 }
 
 void TestRemoveAt(unsigned int index) {
